@@ -1,2 +1,2 @@
 # vpn_switcher
-Automatic VPN configuration switch, notification
+Automated AmneziaWG endpoint switching, health checks and Telegram notifications.
