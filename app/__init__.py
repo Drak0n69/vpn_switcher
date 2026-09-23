@@ -1,0 +1,1 @@
+"""VPN switcher application package."""

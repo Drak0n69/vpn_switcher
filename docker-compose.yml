@@ -1,0 +1,9 @@
+services:
+  vpn-switcher:
+    build: .
+    container_name: vpn-switcher
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./data:/data
