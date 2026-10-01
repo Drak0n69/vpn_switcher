@@ -1,0 +1,15 @@
+# Copy to /data/recipients.yml on Kirill's server.
+# Do NOT commit the real recipients.yml to a public repository.
+recipients:
+  - name: "Denis V."
+    user_id: 123456789
+    chat_id: 123456789
+    files:
+      - "denis-v(pc)_config.vpn"
+      - "denis-v(android)_config.vpn"
+
+  - name: "Ivan"
+    user_id: 987654321
+    chat_id: 987654321
+    files:
+      - "ivan_config.vpn"

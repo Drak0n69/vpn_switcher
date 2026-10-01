@@ -1,1 +1,1 @@
-"""VPN switcher application package."""
+"""Private Amnezia VPN configuration delivery bot."""

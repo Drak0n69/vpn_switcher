@@ -1,5 +1,7 @@
 # VPN configs
 
-Put local Amnezia `.vpn` configuration files here.
+This directory is a mount point for freshly generated Amnezia `.vpn` files.
 
-Do not commit real `.vpn` files to Git.
+Real `.vpn` files contain private client credentials. Never commit them to Git.
+The bot reads files from this directory and sends each file only to the recipient
+configured in `recipients.yml`.

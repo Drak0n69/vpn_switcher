@@ -1,0 +1,19 @@
+# GitHub web upload may hide .gitignore.
+# Upload this file and rename it to .gitignore in GitHub, then delete this comment if desired.
+.env
+*.vpn
+*.conf
+data/recipients.yml
+data/registrations.yml
+data/delivery_state.json
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+runtime/*.yml
+runtime/*.json

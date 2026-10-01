@@ -1,9 +1,16 @@
 services:
-  vpn-switcher:
+  vpn-delivery-bot:
     build: .
-    container_name: vpn-switcher
     restart: unless-stopped
     env_file:
       - .env
     volumes:
-      - ./data:/data
+      # Replace ./data/configs with Kirill's real directory if configs are generated elsewhere.
+      - ${HOST_CONFIG_DIR:-./data/configs}:/data/configs:ro
+      - ./data/recipients.yml:/data/recipients.yml:ro
+      - ./runtime:/data/runtime
+    environment:
+      CONFIG_DIR: /data/configs
+      RECIPIENTS_FILE: /data/recipients.yml
+      REGISTRATIONS_FILE: /data/runtime/registrations.yml
+      DELIVERY_STATE_FILE: /data/runtime/delivery_state.json

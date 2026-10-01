@@ -1,10 +1,7 @@
-from __future__ import annotations
-
-import asyncio
 import logging
 
+from app.bot import VpnDeliveryBot
 from app.config import Settings
-from app.telegram import TelegramBot
 
 
 def main() -> None:
@@ -13,15 +10,10 @@ def main() -> None:
         format="%(asctime)s %(levelname)s %(name)s: %(message)s",
     )
     settings = Settings.from_env()
-    bot = TelegramBot(settings)
-
-    async def runner() -> None:
-        try:
-            await bot.run()
-        finally:
-            await bot.close()
-
-    asyncio.run(runner())
+    settings.config_dir.mkdir(parents=True, exist_ok=True)
+    settings.recipients_file.parent.mkdir(parents=True, exist_ok=True)
+    application = VpnDeliveryBot(settings).build_application()
+    application.run_polling(allowed_updates=["message"])
 
 
 if __name__ == "__main__":
